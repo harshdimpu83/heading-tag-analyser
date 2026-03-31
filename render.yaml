@@ -3,7 +3,7 @@ services:
     name: heading-tag-analyser
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: streamlit run heading_analyzer_app.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: APP_PASSWORD
         sync: false
